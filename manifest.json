@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Active tab title",
+    "version": "1.0.0",
+    "description": "Show tab title of active tabs",
+    "permissions": [
+    "tabs"
+  ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "content_scripts" :[
+       {
+         "matches": ["https://*/*"],
+         "js": ["content.js"],
+         "css": ["style.css"]
+       }
+    ],
+     "host_permissions": [
+    "https://*/*"
+  ],
+
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    }
+}

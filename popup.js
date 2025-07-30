@@ -1,8 +1,3 @@
-// document.getElementById('start').addEventListener('click', () => {
-//   chrome.runtime.sendMessage({ action: 'START_SEQUENCE' });
-// });
-
-
 const API_BASE = 'http://localhost:3000/get/user-linkdin';
 
 document.getElementById('start').addEventListener('click', () => {
@@ -29,9 +24,7 @@ async function fetchAndRender() {
       return;
     }
 
-    // Build cards
     container.innerHTML = profiles.map(p => {
-      // truncate text helpers
       const snip = (text, len) =>
         text && text.length > len ? text.slice(0, len) + '…' : (text || '');
       return `

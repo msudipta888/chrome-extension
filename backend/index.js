@@ -15,7 +15,7 @@ app.use(cors({
 app.use(bodyParser.json());
  
 // Sync with the database
-db.sync({force:true}).then(() => {
+db.sync().then(() => {
     console.log('Database synced successfully');
 }).catch((error) => {
     console.error('Error syncing database:', error);
@@ -57,7 +57,7 @@ if (existing) {
 });
 
 
-
+ 
 app.get('/get/user-linkdin', async (req, res) => { 
     try {
         const profiles = await Profile.findAll();

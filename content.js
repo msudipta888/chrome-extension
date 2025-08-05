@@ -77,8 +77,6 @@ function waitForElements(selector, timeout = 10000) {
       const btnText = btn.textContent.trim();
       const ariaLabel = btn.getAttribute('aria-label') || '';
       console.log(`"${btnText}" | disabled=${btn.disabled} | aria-label="${ariaLabel}"`);
-      
-      // submit button patterns
       if (!btn.disabled && (
         btnText === "Post" || 
         btnText === "Comment" ||

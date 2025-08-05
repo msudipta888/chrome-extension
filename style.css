@@ -1,74 +1,26 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f5f7fa;
-  color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.container {
-  background: #fff;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 360px;
-}
-
-header h1 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #0a66c2;
+  font-family: sans-serif;
+  padding: 16px;
 }
 
 .controls {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-}
-
-.field label {
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-
-.field input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  transition: border-color 0.2s;
-}
-
-.field input:focus {
-  border-color: #0a66c2;
-  outline: none;
+input {
+  padding: 8px;
+  font-size: 14px;
 }
 
 button {
-  padding: 12px;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 10px;
+  font-size: 16px;
   background-color: #0a66c2;
-  color: #fff;
+  color: white;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  border-radius: 4px;
 }
 
 button:disabled {
@@ -76,7 +28,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-button:enabled:hover {
+button:hover:enabled {
   background-color: #004182;
-  transform: translateY(-1px);
 }

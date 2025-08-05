@@ -21,9 +21,9 @@ function waitForElements(selector, timeout = 10000) {
 
   if (likeCount === 0 && commentCount === 0) return;
 
-  await new Promise(resolve => setTimeout(resolve, 5000)); 
+  await new Promise(resolve => setTimeout(resolve, 5000)); // Wait for feed to load
 
-  const posts = Array.from(document.querySelectorAll('div.feed-shared-update-v2')).slice(0, 20);
+  const posts = Array.from(document.querySelectorAll('div.feed-shared-update-v2')).slice(0, 10);
   const shuffled = posts.sort(() => 0.5 - Math.random());
     
   const likePosts = shuffled.slice(0, likeCount);
@@ -31,7 +31,6 @@ function waitForElements(selector, timeout = 10000) {
 
   // LIKES
   for (let post of likePosts) {
-   
     const reactBtn = post.querySelector('button[aria-label*="Like"]');
     if (reactBtn && !reactBtn.classList.contains("reacted")) {
       reactBtn.click();
@@ -41,7 +40,6 @@ function waitForElements(selector, timeout = 10000) {
 
   // COMMENTS
   for (let post of commentPosts) {
-   
     const commentBtn = post.querySelector('button[aria-label*="Comment"]');
     if (!commentBtn) continue;
     
@@ -69,14 +67,14 @@ function waitForElements(selector, timeout = 10000) {
     commentBox.innerText = "CFBR";
     commentBox.dispatchEvent(new Event('input', { bubbles: true }));
     await new Promise(r => setTimeout(r, 1500));
-    
+
     let submitBtn = null;
     const formButtons = commentForm.querySelectorAll('button');
     
     for (const btn of formButtons) {
       const btnText = btn.textContent.trim();
       const ariaLabel = btn.getAttribute('aria-label') || '';
-      console.log(`"${btnText}" | disabled=${btn.disabled} | aria-label="${ariaLabel}"`);
+      
       if (!btn.disabled && (
         btnText === "Post" || 
         btnText === "Comment" ||
@@ -91,7 +89,6 @@ function waitForElements(selector, timeout = 10000) {
 
     if (submitBtn) {
       submitBtn.click();
-      console.log("✅ Clicked submit button");
       await new Promise(r => setTimeout(r, 1500));
     } else {
       commentBox.focus();
@@ -103,7 +100,7 @@ function waitForElements(selector, timeout = 10000) {
       await new Promise(r => setTimeout(r, 1500));
     }
   }
-  
+    
   localStorage.removeItem("auto_like_count");
   localStorage.removeItem("auto_comment_count");
 })();

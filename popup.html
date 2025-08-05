@@ -1,29 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LinkedIn Auto Bot</title>
-  <link rel="stylesheet" href="./style.css" />
+ <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>LinkedIn Auto Bot</h1>
-    </header>
-    <div class="controls">
-      <div class="field">
-        <label for="likeCount">Like Count</label>
-        <input type="number" id="likeCount" min="1" placeholder="Enter likes to send" />
-      </div>
-      <div class="field">
-        <label for="commentCount">Comment Count</label>
-        <input type="number" id="commentCount" min="0" placeholder="Enter comments to send" />
-      </div>
-      <button id="startBtn" disabled>Start Automation</button>
-    </div>
-  </div>
+  <h3>LinkedIn Auto Bot</h3>
+  <input type="number" id="likeCount" placeholder="Like Count" min="1" />
+  <input type="number" id="commentCount" placeholder="Comment Count" min="0" />
+  <button id="startBtn" disabled>Start</button>
 
   <script src="popup.js"></script>
 </body>
